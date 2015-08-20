@@ -1,0 +1,27 @@
+<h1>Listing mythemes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mythemes.each do |mytheme| %>
+      <tr>
+        <td><%= mytheme.name %></td>
+        <td><%= link_to 'Show', mytheme %></td>
+        <td><%= link_to 'Edit', edit_mytheme_path(mytheme) %></td>
+        <td><%= link_to 'Destroy', mytheme, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mytheme', new_mytheme_path %>
